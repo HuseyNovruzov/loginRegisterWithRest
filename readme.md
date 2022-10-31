@@ -19,70 +19,70 @@ You can see all technologies in the **requirements.txt**
 ## Usage
 
 ### register
-`POST ` ```diff - /api/register```
+`POST ` ```/api/register```
 Request body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - email ``` |
-| ```diff - user_name ``` |
-| ```diff - password ``` |
+| ```email ``` |
+| ```user_name ``` |
+| ```password ``` |
 
 ### send-otp
-`POST` ```diff - /api/send-otp```
+`POST` ```/api/send-otp```
 Request body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - email ``` |
+| ```email ``` |
 
 ### verify-email
-`POST` ```diff - /api/verify-otp```
+`POST` ```/api/verify-otp```
 Request Body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - email ``` |
-| ```diff - otp ``` |
+| ```email ``` |
+| ```otp ``` |
 
 ### login
-`POST` ```diff - /api/login```
+`POST` ```/api/login```
 Takes a set of user credentials and returns an access and refresh JSON web token pair to prove the authentication of those credentials.
 Request body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - email ``` |
-| ```diff - password``` |
+| ```email ``` |
+| ```password``` |
 
 ### logout
-`POST` ```diff - /api/logout/```
+`POST` ```/api/logout/```
 Takes a token and blacklists it. Must be used with the `rest_framework_simplejwt.token_blacklist` app installed.
 Request body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - refresh  ``` |
+| ```refresh  ``` |
 
 ### refresh > token
-`POST` ```diff - /api/token/refresh/```
+`POST` ```/api/token/refresh/```
 Takes a refresh type JSON web token and returns an access type JSON web token if the refresh token is valid.
 Request Body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - refresh ``` |
+| ```refresh ``` |
 
 ### reset-password
-`POST` ```diff - /api/reset-password/```
+`POST` ```/api/reset-password/```
 Request Body
-The request body should be a ```diff - "application/json" ``` encoded object, containing the following items.
+The request body should be a ```"application/json" ``` encoded object, containing the following items.
 | Parameter |
 | --------- |
-| ```diff - email  ``` |
-| ```diff - otp ``` |
-| ```diff - password ``` |
-| ```diff - password_confirm ``` |
+| ```email  ``` |
+| ```otp ``` |
+| ```password ``` |
+| ```password_confirm ``` |
 
 ## Setup
 To run this project in your local you need to execute below commands
@@ -99,4 +99,7 @@ Using requirements.txt file download dependencies
 ```
 $ pip install -r requirements.txt
 ```
-
+Using below command run the application
+```
+$ py manage.py runserver
+```
